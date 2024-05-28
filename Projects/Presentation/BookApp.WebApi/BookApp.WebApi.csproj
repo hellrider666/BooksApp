@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Classes\Helpers\**" />
+    <Content Remove="Classes\Helpers\**" />
+    <EmbeddedResource Remove="Classes\Helpers\**" />
+    <None Remove="Classes\Helpers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\BooksApp.Application\BooksApp.Application.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\BooksApp.Commons\BooksApp.Commons.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\BooksApp.Persistence\BooksApp.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>
